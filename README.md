@@ -1,6 +1,25 @@
-# Timi Convex Migration
+# Timi Monorepo - Convex Migration
 
-This repository contains the migration from Prisma/PostgreSQL to Convex for the Timi monorepo.
+This repository contains the migration from Prisma/PostgreSQL to Convex for the Timi monorepo, now restructured as a proper monorepo.
+
+## Monorepo Structure
+
+```
+├── apps/
+│   ├── web/              # Main web application
+│   ├── extension/        # Browser extension
+│   └── api/              # API server (if applicable)
+├── packages/
+│   ├── convex-functions/ # Convex backend functions
+│   ├── convex-client/   # Client integration layer
+│   ├── convex-schema/    # Shared schema definitions
+│   ├── shared/           # Shared utilities and types
+│   ├── ui/               # Shared UI components
+│   ├── types/            # Shared TypeScript types
+│   └── migration/        # Data migration scripts
+├── turbo.json            # Turbo build configuration
+└── package.json          # Root package file with workspaces
+```
 
 ## Migration Overview
 
@@ -9,23 +28,6 @@ The migration includes the following components:
 2. Function implementation for all data operations
 3. Client integration examples
 4. Data migration scripts
-
-## Schema Conversion
-
-We've converted all Prisma models to Convex document schemas with proper indexing for performance.
-
-## Function Implementation
-
-We've implemented comprehensive Convex functions for:
-- User management with Clerk auth integration
-- Extension data synchronization
-- Activity tracking and session management
-- Announcements system
-- System metrics
-
-## Data Migration
-
-The migration script handles transferring existing PostgreSQL data to Convex while maintaining data integrity.
 
 ## Setup
 
@@ -36,7 +38,7 @@ npm install
 
 2. Initialize Convex:
 ```bash
-npx convex init
+cd packages/convex-functions && npx convex init
 ```
 
 3. Configure environment variables:
@@ -48,11 +50,28 @@ CONVEX_URL=your-convex-url-here
 CLERK_SECRET_KEY=your-clerk-secret-key-here
 ```
 
+## Development
+
+Run all apps and packages in development mode:
+```bash
+npm run dev
+```
+
+Run specific app in development mode:
+```bash
+npm run dev -- --filter=web
+```
+
 ## Deployment
 
-1. Deploy to Convex:
+Deploy all packages:
 ```bash
 npm run deploy
+```
+
+Deploy specific package:
+```bash
+npm run deploy -- --filter=convex-functions
 ```
 
 ## Running the Migration
@@ -62,10 +81,6 @@ npm run deploy
 ```bash
 npm run migration
 ```
-
-## Client Integration
-
-Use the client integration example in `client/integration.ts` to integrate Convex with your frontend applications.
 
 ## Benefits of Migration
 

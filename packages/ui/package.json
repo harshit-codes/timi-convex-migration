@@ -1,0 +1,11 @@
+{
+  "name": "@timi/ui",
+  "version": "1.0.0",
+  "description": "Shared UI components for Timi monorepo",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "react": "^18.0.0",
+    "@timi/shared": "*"
+  }
+}

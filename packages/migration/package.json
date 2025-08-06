@@ -1,0 +1,17 @@
+{
+  "name": "@timi/migration",
+  "version": "1.0.0",
+  "description": "Data migration scripts from Prisma/PostgreSQL to Convex",
+  "main": "src/migration.ts",
+  "scripts": {
+    "migrate": "ts-node src/migration.ts"
+  },
+  "dependencies": {
+    "convex": "^1.10.0",
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}

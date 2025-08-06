@@ -1,0 +1,10 @@
+{
+  "name": "@timi/convex-schema",
+  "version": "1.0.0",
+  "description": "Shared Convex schema definitions for Timi monorepo",
+  "main": "src/schema.ts",
+  "types": "src/schema.ts",
+  "dependencies": {
+    "convex": "^1.10.0"
+  }
+}

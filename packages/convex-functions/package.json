@@ -1,0 +1,14 @@
+{
+  "name": "@timi/convex-functions",
+  "version": "1.0.0",
+  "description": "Convex functions for Timi monorepo",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy"
+  },
+  "dependencies": {
+    "convex": "^1.10.0"
+  }
+}

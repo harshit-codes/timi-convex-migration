@@ -9,15 +9,18 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@timi/*": ["packages/*/src"]
+    }
   },
   "include": [
-    "convex/**/*",
-    "client/**/*",
-    "migrationScript.ts"
+    "packages/**/*"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "apps"
   ]
 }
