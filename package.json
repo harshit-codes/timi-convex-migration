@@ -1,0 +1,22 @@
+{
+  "name": "timi-convex-migration",
+  "version": "1.0.0",
+  "description": "Migration from Prisma/PostgreSQL to Convex for Timi monorepo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "convex dev",
+    "init": "convex init",
+    "deploy": "convex deploy",
+    "migration": "ts-node migrationScript.ts"
+  },
+  "dependencies": {
+    "convex": "^1.10.0",
+    "@clerk/clerk-sdk-node": "^4.13.0",
+    "@clerk/clerk-react": "^4.30.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}
